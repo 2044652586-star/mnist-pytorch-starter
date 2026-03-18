@@ -62,7 +62,8 @@ def main():
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
-    print(f"Test Accuracy: {100 * correct / total:.2f}%")
+        accuracy = 100 * correct / total
+    print(f"Test Accuracy: {accuracy:.2f}%")
 
     torch.save(model.state_dict(), "mnist_model.pth")
     print("Model saved as mnist_model.pth")
